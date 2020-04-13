@@ -18,7 +18,10 @@ defmodule MyAppWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
-    resources "/articles", ArticleController
+    live "/articles", ArticleLive, :index
+    live "/articles/new", ArticleLive, :new
+    live "/articles/:id", ArticleLive, :show
+    live "/articles/:id/edit", ArticleLive, :edit
   end
 
   # Other scopes may use custom stacks.

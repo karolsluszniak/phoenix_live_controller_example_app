@@ -1,0 +1,13 @@
+<h1>Show Article</h1>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @article.title %>
+  </li>
+
+</ul>
+
+<span><%= live_redirect "Edit", to: Routes.article_path(@socket, :edit, @article) %></span>
+<span><%= live_redirect "Back", to: Routes.article_path(@socket, :index) %></span>
