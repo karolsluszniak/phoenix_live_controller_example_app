@@ -29,6 +29,15 @@ defmodule MyAppWeb do
     end
   end
 
+  def live do
+    quote do
+      use Phoenix.LiveView, layout: {MyAppWeb.LayoutView, "live.html"}
+
+      import MyAppWeb.Gettext
+      alias MyAppWeb.Router.Helpers, as: Routes
+    end
+  end
+
   def view do
     quote do
       use Phoenix.View,
